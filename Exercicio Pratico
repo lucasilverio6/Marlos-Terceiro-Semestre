@@ -1,0 +1,23 @@
+
+package javaapplication1;
+
+import javax.swing.JOptionPane;
+
+
+public class JavaApplication1 {
+
+    
+    public static void main(String[] args) {
+        
+        int num1;
+        int num2;
+      
+        
+        num1 = Integer.parseInt(JOptionPane.showInputDialog("Informe o numero 1:"));
+        num2 = Integer.parseInt(JOptionPane.showInputDialog("Informe o numero 2:"));
+        
+        JOptionPane.showMessageDialog(null, "Resultado: " + (num1 + num2));
+        
+    }
+    
+}
