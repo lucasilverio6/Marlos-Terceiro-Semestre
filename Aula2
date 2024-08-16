@@ -1,0 +1,41 @@
+package com.senai.aula2;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+public class Aula2Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Aula2Application.class, args);
+    }
+
+    //Modificador de acesso,
+    //String tipo de retorno do metodo
+    //"HelloWorld" nome do metodo
+    //"( )" Parametros        
+    @GetMapping("/")
+    public ResponseEntity<Numero> helloworld() {
+        
+        Numero num = new Numero();
+        num.setNumero1(1);
+        num.setNumero2(2);
+        
+        return ResponseEntity.accepted().body(num);
+
+    }
+
+    @PostMapping("/")
+    public String post(@RequestBody Numero num) {
+        System.out.println("Numero1 = " + num.getNumero1());
+        System.out.println("Numero2 = " + num.getNumero2());
+        return "post";
+    }
+
+}
